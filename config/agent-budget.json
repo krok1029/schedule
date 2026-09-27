@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "kind": "schedule-project-policy",
+  "status": "monitored_only_not_hard_enforced",
+  "project": "schedule",
+  "weeklyBudget": {
+    "basis": "account_total_weekly_allowance",
+    "maxPercentagePoints": 30,
+    "stopStartingNewIterationsAtPercentagePoints": 28,
+    "reservePercentagePoints": 2,
+    "period": "provider_weekly_reset",
+    "carryOver": false,
+    "scope": "all_schedule_agent_work_including_reviews_retries_and_subagents"
+  },
+  "batch": {
+    "maxTasks": 1,
+    "maxMinutes": 60,
+    "maxRepairAttemptsPerFailure": 3
+  },
+  "accounting": {
+    "method": "conservative_shared_account_deltas_during_active_intervals",
+    "ledgerInitialized": true,
+    "priorUsageAttribution": "unknown",
+    "missingOrAmbiguousUsage": "stop_before_next_iteration",
+    "multipleWeeklyBuckets": "require_common_accounting_before_cross_bucket_execution"
+  },
+  "spending": {
+    "purchaseCredits": false,
+    "usePaidApiFallback": false,
+    "consumeResetCreditsAutomatically": false
+  },
+  "execution": {
+    "runnerInstalled": false,
+    "unattendedEnabled": false,
+    "scheduleEnabled": false
+  }
+}
