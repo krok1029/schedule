@@ -1,0 +1,34 @@
+{
+  "name": "schedule",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @schedule/web dev",
+    "build": "pnpm --filter @schedule/web build",
+    "typecheck": "pnpm --filter @schedule/web typecheck",
+    "lint": "oxlint apps scripts",
+    "format": "oxfmt --write apps scripts package.json pnpm-workspace.yaml tsconfig.base.json vitest.config.ts .oxlintrc.json",
+    "format:check": "oxfmt --check apps scripts package.json pnpm-workspace.yaml tsconfig.base.json vitest.config.ts .oxlintrc.json",
+    "check:lines": "node scripts/check-lines.mjs",
+    "test": "vitest run",
+    "check": "pnpm check:lines && pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "db:status": "supabase status",
+    "budget:record": "node scripts/record-budget.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.0",
+    "oxfmt": "0.70.0",
+    "oxlint": "1.85.0",
+    "supabase": "2.118.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.1",
+    "vitest": "5.0.2"
+  },
+  "engines": {
+    "node": ">=24.11.0 <25"
+  },
+  "packageManager": "pnpm@10.17.0"
+}
