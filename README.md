@@ -71,4 +71,4 @@ pnpm dev
 - Docker 啟動後，`pnpm db:start`／`pnpm db:stop`：啟停本機 Supabase；停止會保留本機資料。
 - `pnpm budget:record <snapshot.json>`：記錄可信來源用量快照，格式與限制見[預算文件](docs/agent-budget.md)。
 
-本批證據與剩餘限制見 [SETUP-001](docs/tasks/SETUP-001.md)。下一步補齊手機與資料權限驗證，然後執行 [PILOT-001](docs/tasks/pilot.md)。
+歷史建置紀錄見 [SETUP-001](docs/tasks/SETUP-001.md)；當前基線的乾淨安裝、品質檢查與剩餘限制見 [TKT-001 驗證紀錄](docs/verification/TKT-001-baseline.md)。先完成 [#7](https://github.com/krok1029/schedule/issues/7) 的 PR 審查與合併後驗證，再依已發布 tickets 的依賴補齊網頁、手機與資料權限驗證。
